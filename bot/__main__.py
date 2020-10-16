@@ -28,19 +28,19 @@ from bot.modules.connection import connect_button
 
 PM_START_TEXT = """
 *Hello* *{}*
-*My name is* *{}*\n\n`You Can Add any kind of Filters to This Bot!`
+*My Name Is* *{}*\n\n`You Can Add Any Kind Of Filters To This Bot!`
 
-_Click Help button for more details_
+_Click Help Button For More Details_
 """
 
 
 HELP_STRINGS = """
-*Hello My name is* *{}*.
-*Main Available Commands are Below:*
+*Hello My Name Is* *{}*.
+*Main Available Commands Are Below:*
 
-All of the following commands  / can  be used...
+All Of The Following Commands / Can Be Used...
 
-And the following:
+And The Following:
 """.format(dispatcher.bot.first_name, "" if not ALLOW_EXCL else "\nAll commands can either be used with / or !.\n")
 
 
