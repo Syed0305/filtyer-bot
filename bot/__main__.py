@@ -71,7 +71,7 @@ GDPR = []
 
 START_IMG = os.environ.get('START_IMG', None)
 if START_IMG is None:
-    img = "https://akashfu1.herokuapp.com/28351375984832/2020-10-16_08:53:26.jpg"
+    img = "https://telegra.ph/file/fc734b227985a1524e715.jpg"
 else:
   img = START_IMG    
     
@@ -157,7 +157,7 @@ def start(bot: Bot, update: Update, args: List[str]):
         else:
             send_start(bot, update)
     else:
-        update.effective_message.reply_text("Heya,{} Here..\nHow can I help you? 🙂".format(bot.username),reply_markup=InlineKeyboardMarkup(
+        update.effective_message.reply_text("Heya,{} Here..\nHow can I help you? 🙂".format(bot.first_name),reply_markup=InlineKeyboardMarkup(
                                                 [[InlineKeyboardButton(text="⚙️HELP",url="t.me/{}?start=help".format(bot.username))]]))
 
 def send_start(bot, update):
@@ -169,13 +169,13 @@ def send_start(bot, update):
         pass
 
     chat = update.effective_chat  # type: Optional[Chat]
-    first_name = update.effective_user.username
+    first_name = update.effective_user.first_name 
     text = PM_START_TEXT
 
-    keyboard = [[InlineKeyboardButton(text="👨‍💻H͏E͏L͏P͏👨‍💻",callback_data="help_back"),InlineKeyboardButton(text="🦸‍M͏A͏S͏T͏E͏R͏🦸‍",url="https://t.me/J_O_K_E_R_10_15_11_5_18")]]
-    keyboard += [[InlineKeyboardButton(text="🔗C͏O͏N͏N͏E͏C͏T͏ G͏R͏O͏U͏P͏🔗", callback_data="main_connect"),InlineKeyboardButton(text="➕A͏D͏D͏ M͏E͏➕",url="t.me/{}?startgroup=true".format(bot.username))]]
+    keyboard = [[InlineKeyboardButton(text="👨‍💻HELP👨‍💻",callback_data="help_back"),InlineKeyboardButton(text="🦸‍♂️MASTER🦸‍♂️",url="https://t.me/J_O_K_E_R_10_15_11_5_18")]]
+    keyboard += [[InlineKeyboardButton(text="🔗CONNECT GROUP🔗", callback_data="main_connect"),InlineKeyboardButton(text="➕ADD ME➕",url="t.me/{}?startgroup=true".format(bot.username))]]
 
-    update.effective_message.reply_photo(img, PM_START_TEXT.format(escape_markdown(username), escape_markdown(bot.username), OWNER_NAME, OWNER_ID), 
+    update.effective_message.reply_photo(img, PM_START_TEXT.format(escape_markdown(first_name), escape_markdown(bot.first_name), OWNER_NAME, OWNER_ID), 
                                          reply_markup=InlineKeyboardMarkup(keyboard), disable_web_page_preview=True, parse_mode=ParseMode.MARKDOWN)
 
 
