@@ -158,7 +158,7 @@ def start(bot: Bot, update: Update, args: List[str]):
             send_start(bot, update)
     else:
         update.effective_message.reply_text("Heya,{} Here..\nHow can I help you? 🙂".format(bot.first_name),reply_markup=InlineKeyboardMarkup(
-                                                [[InlineKeyboardButton(text="⚙️𝓗𝓔𝓛𝓟",url="t.me/{}?start=help".format(bot.username))]]))
+                                                [[InlineKeyboardButton(text="⚙️HELP",url="t.me/{}?start=help".format(bot.username))]]))
 
 def send_start(bot, update):
     #Try to remove old message
@@ -172,8 +172,8 @@ def send_start(bot, update):
     first_name = update.effective_user.first_name 
     text = PM_START_TEXT
 
-    keyboard = [[InlineKeyboardButton(text="👨‍💻𝓗𝓔𝓛𝓟👨‍💻",callback_data="help_back"),InlineKeyboardButton(text="🦸‍𝓜𝓐𝓢𝓣𝓔𝓡🦸‍",url="https://t.me/J_O_K_E_R_10_15_11_5_18")]]
-    keyboard += [[InlineKeyboardButton(text="🔗𝓒𝓞𝓝𝓝𝓔𝓒𝓣 𝓖𝓡𝓞𝓤𝓟🔗", callback_data="main_connect"),InlineKeyboardButton(text="➕𝓐𝓓𝓓 𝓜𝓔➕",url="t.me/{}?startgroup=true".format(bot.username))]]
+    keyboard = [[InlineKeyboardButton(text="👨‍💻H͏E͏L͏P͏👨‍💻",callback_data="help_back"),InlineKeyboardButton(text="🦸‍M͏A͏S͏T͏E͏R͏🦸‍",url="https://t.me/J_O_K_E_R_10_15_11_5_18")]]
+    keyboard += [[InlineKeyboardButton(text="🔗C͏O͏N͏N͏E͏C͏T͏ G͏R͏O͏U͏P͏🔗", callback_data="main_connect"),InlineKeyboardButton(text="➕A͏D͏D͏ M͏E͏➕",url="t.me/{}?startgroup=true".format(bot.username))]]
 
     update.effective_message.reply_photo(img, PM_START_TEXT.format(escape_markdown(first_name), escape_markdown(bot.first_name), OWNER_NAME, OWNER_ID), 
                                          reply_markup=InlineKeyboardMarkup(keyboard), disable_web_page_preview=True, parse_mode=ParseMode.MARKDOWN)
@@ -273,8 +273,8 @@ def get_help(bot: Bot, update: Update):
 
         update.effective_message.reply_text("Contact me in PM to get the list of possible commands.",
                                             reply_markup=InlineKeyboardMarkup(
-                                                [[InlineKeyboardButton(text="👨‍💻𝓗𝓔𝓛𝓟👨‍💻",url="t.me/{}?start=help".format(bot.username))],  
-                                                [InlineKeyboardButton(text="🦸‍♂️𝓒𝓞𝓝𝓣𝓐𝓒𝓣 𝓞𝓦𝓝𝓔𝓡🦸‍♂️",url="https://t.me/J_O_K_E_R_10_15_11_5_18")]]))
+                                                [[InlineKeyboardButton(text="👨‍💻HELP👨‍💻",url="t.me/{}?start=help".format(bot.username))],  
+                                                [InlineKeyboardButton(text="🦸‍♂️CONTACT OWNER🦸‍♂️",url="https://t.me/J_O_K_E_R_10_15_11_5_18")]]))
         return
 
     elif len(args) >= 2 and any(args[1].lower() == x for x in HELPABLE):
@@ -395,7 +395,7 @@ def get_settings(bot: Bot, update: Update):
             text = "Click here to get this chat's settings, as well as yours."
             msg.reply_text(text,
                            reply_markup=InlineKeyboardMarkup(
-                               [[InlineKeyboardButton(text="⚙️𝓢𝓔𝓣𝓣𝓘𝓝𝓖𝓢⚙️",
+                               [[InlineKeyboardButton(text="⚙️SETTINGS⚙️",
                                                       url="t.me/{}?start=stngs_{}".format(
                                                           bot.username, chat.id))]]))
         else:
